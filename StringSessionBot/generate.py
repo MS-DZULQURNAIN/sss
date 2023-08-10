@@ -33,7 +33,7 @@ from telethon.errors import (
 
 from env import API_ID, API_HASH
 
-ask_ques = "Please choose the python library you want to generate string session for"
+ask_ques = "Pilih String Yang Mau lu ambil"
 buttons_ques = [
     [
         InlineKeyboardButton("Pyrogram", callback_data="pyrogram1"),
@@ -97,20 +97,17 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
                 code = await client.send_code_request(phone_number)
             else:
                 code = await client.send_code(phone_number)
-    except (ApiIdInvalid, ApiIdInvalidError, ApiIdInvalid1):
-        await msg.reply('`API_ID` and `API_HASH` combination is invalid. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
-        return
     except (PhoneNumberInvalid, PhoneNumberInvalidError, PhoneNumberInvalid1):
-        await msg.reply('`PHONE_NUMBER` is invalid. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await msg.reply('`Nomor Telegram` Tidak cocok Silahkan buat ulang.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
     try:
         phone_code_msg = None
         if not is_bot:
-            phone_code_msg = await bot.ask(user_id, "Please check for an OTP in official telegram account. If you got it, send OTP here after reading the below format. \nIf OTP is `12345`, **please send it as** `1 2 3 4 5`. Give space Between All the Numbers \n\n@TmMainChannel", filters=filters.text, timeout=600)
+            phone_code_msg = await bot.ask(user_id, "Silakan periksa OTP di akun resmi telegram. Kirimkan Kode OTP ke sini Pakai Spasi. \nJika kode `12345`, **Kirimkan dengan** `1 2 3 4 5`. Pakai spasi ya Credits @MSDQQQ", filters=filters.text, timeout=600)
             if await cancelled(phone_code_msg):
                 return
     except TimeoutError:
-        await msg.reply('Time limit reached of 10 minutes. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await msg.reply('Batas waktu mencapai 10 menit.  Silakan mulai membuat string lagi.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
     if not is_bot:
         phone_code = phone_code_msg.text.replace(" ", "")
@@ -120,16 +117,16 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
             else:
                 await client.sign_in(phone_number, code.phone_code_hash, phone_code)
         except (PhoneCodeInvalid, PhoneCodeInvalidError, PhoneCodeInvalid1):
-            await msg.reply('OTP is invalid. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
+            await msg.reply('OTP tidak valid.  Silakan mulai membuat string lagi.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
             return
         except (PhoneCodeExpired, PhoneCodeExpiredError, PhoneCodeExpired1):
-            await msg.reply('OTP is expired. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
+            await msg.reply('OTP telah kadaluwarsa.  Silakan mulai membuat string lagi.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
             return
         except (SessionPasswordNeeded, SessionPasswordNeededError, SessionPasswordNeeded1):
             try:
-                two_step_msg = await bot.ask(user_id, 'Your account has enabled two-step verification. Please provide the password.', filters=filters.text, timeout=300)
+                two_step_msg = await bot.ask(user_id, 'Akun Anda telah mengaktifkan verifikasi dua langkah.  Berikan kata sandi.', filters=filters.text, timeout=300)
             except TimeoutError:
-                await msg.reply('Time limit reached of 5 minutes. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
+                await msg.reply('Batas waktu mencapai 5 menit.  Silakan mulai membuat sesi lagi.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
                 return
             try:
                 password = two_step_msg.text
@@ -140,7 +137,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
                 if await cancelled(api_id_msg):
                     return
             except (PasswordHashInvalid, PasswordHashInvalidError, PasswordHashInvalid1):
-                await two_step_msg.reply('Invalid Password Provided. Please start generating session again.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
+                await two_step_msg.reply('Kata Sandi Tidak Valid Diberikan.  Silakan mulai membuat string lagi.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
                 return
     else:
         if telethon:
@@ -151,7 +148,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"**{ty.upper()} STRING SESSION** \n\n`{string_session}` \n\nGenerated by @TmMainChannel"
+    text = f"**{ty.upper()} STRING SESSION** \n\n`{string_session}` \n\nDibuat oleh @StringDzRobot\nCh : @DezetStore\nGc : @DezetSupport\nOwner : @MSDQQQ"
     try:
         if not is_bot:
             await client.send_message("me", text)
@@ -160,7 +157,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     except KeyError:
         pass
     await client.disconnect()
-    await bot.send_message(msg.chat.id, "Successfully generated {} string session. \n\nPlease check your saved messages! \n\nBy @TmMainChannel".format("telethon" if telethon else "pyrogram"))
+    await bot.send_message(msg.chat.id, "Berhasil membuat {} string session. \n\nCek di pesan tersimpan! \n\nDibuat oleh @StringDzRobot\nCh : @DezetStore\nGc : @DezetSupport\nOwner : @MSDQQQ".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
