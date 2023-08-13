@@ -131,7 +131,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
                 await msg.reply('**Batas waktu mencapai 5 menit.  Silakan mulai membuat sesi lagi.**', reply_markup=InlineKeyboardMarkup(Data.generate_button))
                 return
             try:
-                salah = await bot.ask("**Berhasil Membuat String, Tunggu sebentar...**")
+                salah = await msg.reply("**Berhasil Membuat String, Tunggu sebentar...**")
                 password = two_step_msg.text
                 if telethon:
                     await client.sign_in(password=password)
