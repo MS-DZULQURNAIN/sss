@@ -1,7 +1,7 @@
 {
-  "name": "Pyrogram String Session Generator",
-  "description": "Telegram bot to generate pyrogram string session Made By Techno MIndz",
-  "logo": "https://telegra.ph/file/fc596ec05d690427dca1d.jpg",
+  "name": "Bot pengambilan string melalui telegram",
+  "description": "Dibuat oleh MS-DZULQURNAIN https://t.me/MSDQQQ",
+  "logo": "",
   "keywords": [
     "telegram",
     "bot",
@@ -14,7 +14,7 @@
   "formation": {
     "worker": {
       "quantity": 1,
-      "size": "free"
+      "size": "basic"
     }
   },
   "addons": [
@@ -25,7 +25,7 @@
          "plan": "heroku-postgresql"
       }
    ],
-  "repository": "https://github.com/TechnoMindz/StringSessionBot",
+  "repository": "https://github.com/MS-DZULQURNAIN/string",
   "env": {
     "ENVIRONMENT": {
       "description": "Don't change ANYTHING.",
