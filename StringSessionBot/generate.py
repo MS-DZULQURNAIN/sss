@@ -67,6 +67,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     user_id = msg.chat.id
     api_id = API_ID
     api_hash = API_HASH
+    await asyncio.sleep(1.0)
     if not is_bot:
         t = "**Kirimkan `Nomor Telegram` Anda Dengan Code Negara \nContoh : `+919876543210`**"
     else:
@@ -158,18 +159,19 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     except KeyError:
         pass
     await client.disconnect()
+    await asyncio.sleep(1.0)
     await bot.send_message(msg.chat.id, "**Berhasil membuat {} string session. \n\nCek di pesan tersimpan!** \n\nDibuat oleh @StringDzRobot\nCh : @DezetStore\nGc : @DezetSupport\nOwner : @MSDQQQ".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
     if "/cancel" in msg.text:
-        await msg.reply("**Cancelled the Process!**", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await msg.reply("**Permintaan dibatalkan!**", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return True
     elif "/restart" in msg.text:
-        await msg.reply("**Restarted the Bot!**", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await msg.reply("**Restart Bot!**", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return True
     elif msg.text.startswith("/"):  # Bot Commands
-        await msg.reply("**Cancelled the generation process!**", quote=True)
+        await msg.reply("**Permintaan dibatalkan!**", quote=True)
         return True
     else:
         return False
