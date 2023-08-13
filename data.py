@@ -31,7 +31,7 @@ Gw {} Gw bisa bantu lu buat string pyrogram v1, pyrogram v2 dan telethon
 
 Kalo lu ga percaya bot ini hapus & blok aja gausah ribet yee, semua diluar tanggungjawab gw jika terjadi masalah atau bahkan disalahgunakan!
 
-Buat id 5/6 Gausah ngambil string disini ntar akun lu deact/log out koar-koar anj🗿
+Buat id 5/6 Gausah ngambil string disini ntar akun lu deact/log out koar-koar anj🗿**
 
 Maintenance By @MSDQQ
     """
@@ -49,13 +49,13 @@ Maintenance By @MSDQQ
 """
 
     ABOUT = """
-**Tentang gw** 
+**Tentang gw
 
-Lu pasti tau gw jadi gausah dibaca lagi🥴
+Lu pasti tau gw jadi gausah dibaca lagi🥴**
 
-Owner : MSDQQQ
-CH : DezetStore
-GC : DezetSupport
+**Owner** : @MSDQQQ
+**CH** : @DezetStore
+**GC** : @DezetSupport
 
-Donasi atau PP endorsement langsung pc owner diatas🙏
+**Donasi atau PP endorsement langsung pc owner diatas🙏**
     """
