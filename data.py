@@ -2,61 +2,60 @@ from pyrogram.types import InlineKeyboardButton
 
 
 class Data:
-    generate_single_button = [InlineKeyboardButton("🔥Start Generating Session🔥", callback_data="generate")]
+    generate_single_button = [InlineKeyboardButton("🔥 BUAT STRING 🔥", callback_data="generate")]
 
     home_buttons = [
         generate_single_button,
-        [InlineKeyboardButton(text="Home 🏠", callback_data="home")]
+        [InlineKeyboardButton(text="Kembali", callback_data="home")]
     ]
 
     generate_button = [generate_single_button]
 
     buttons = [
         generate_single_button,
-        [InlineKeyboardButton("✨SUPPORT✨", url="https://t.me/technomindzchat")],
         [
-            InlineKeyboardButton("How to Use ❔", callback_data="help"),
-            InlineKeyboardButton("About🎪", callback_data="about")
+            InlineKeyboardButton("Channel", url="https://t.me/DezetStore"),
+            InlineKeyboardButton("Support", url="https://t.me/DezetSupport"),
         ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/technomindzbot")],
+        [
+            InlineKeyboardButton("Help", callback_data="help"),
+            InlineKeyboardButton("Gw", callback_data="about")
+        ],
+        [InlineKeyboardButton("FakeDev", url="https://t.me/msdqqq")],
     ]
 
     START = """
-Hey {}
+**Halo {}
 
-Welcome to {}
+Gw {} Gw bisa bantu lu buat string pyrogram v1, pyrogram v2 dan telethon
 
-If you don't trust this bot, 
-1) stop reading this message
-2) delete this chat
+Kalo lu ga percaya bot ini hapus & blok aja gausah ribet yee, semua diluar tanggungjawab gw jika terjadi masalah atau bahkan disalahgunakan!
 
-Still reading?
-You can use me to generate pyrogram (even version 2) and telethon string session. Use below buttons to learn more !
+Buat id 5/6 Gausah ngambil string disini ntar akun lu deact/log out koar-koar anj🗿
 
-By @TmMainChannel
+Maintenance By @MSDQQ
     """
 
     HELP = """
-✨ **Available Commands** ✨
+**Perintah bot ini**
 
-/about - About The Bot
-/help - This Message
-/start - Start the Bot
-/generate - Generate Session
-/cancel - Cancel the process
-/restart - Cancel the process
+/about - Tentang gw
+/help - Bantuan
+/start - Memulai bot
+/generate - Buat String
+/cancel - Cancel
+/stats - Jumlah pengguna (owner)
+/gcast - Broadcast ke pengguna (owner)
 """
 
     ABOUT = """
-**About This Bot** 
+**Tentang gw** 
 
-Telegram Bot to generate Pyrogram and Telethon string session by @StarkBots
+Lu pasti tau gw jadi gausah dibaca lagi🥴
 
-Source Code : [Click Here](https://t.me/technomindzbot)
+Owner : MSDQQQ
+CH : DezetStore
+GC : DezetSupport
 
-Framework : [Pyrogram](https://docs.pyrogram.org)
-
-Language : [Python](https://www.python.org)
-
-Developer : [꧁𓊈𒆜🆁🅰🆅🅸🅽🅰🅽🅳🅰🅽𒆜𓊉꧂](https://t.me/technomindzyt)
+Donasi atau PP endorsement langsung pc owner diatas🙏
     """
