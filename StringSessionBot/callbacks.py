@@ -3,7 +3,7 @@ from data import Data
 from pyrogram import Client
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
 from StringSessionBot.generate import generate_session, ask_ques, buttons_ques
-from telegram import parse_
+from telegram import ParseMode
 
 
 # Callbacks
