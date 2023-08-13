@@ -31,9 +31,10 @@ from telethon.errors import (
     PasswordHashInvalidError
 )
 
+from telegram import ParseMode
 from env import API_ID, API_HASH
 
-ask_ques = "Pilih String Yang Mau lu ambil"
+ask_ques = "**Pilih String Yang Mau lu ambil**"
 buttons_ques = [
     [
         InlineKeyboardButton("Pyrogram", callback_data="pyrogram1"),
