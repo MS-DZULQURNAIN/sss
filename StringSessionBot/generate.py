@@ -1,3 +1,4 @@
+import asyncio
 from data import Data
 from pyrogram.types import Message
 from telethon import TelegramClient
