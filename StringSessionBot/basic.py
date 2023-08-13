@@ -1,7 +1,6 @@
 from data import Data
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
-from telegram import ParseMode
 
 def filter(cmd: str):
     return filters.private & filters.incoming & filters.command(cmd)
@@ -15,7 +14,6 @@ async def start(bot: Client, msg: Message):
     await bot.send_message(
         msg.chat.id,
         Data.START.format(msg.from_user.mention, mention),
-        parse_mode=ParseMode.MARKDOWN, 
         reply_markup=InlineKeyboardMarkup(Data.buttons)
     )
 
@@ -25,7 +23,6 @@ async def start(bot: Client, msg: Message):
 async def _help(bot: Client, msg: Message):
     await bot.send_message(
         msg.chat.id, Data.HELP,
-        parse_mode=ParseMode.MARKDOWN, 
         reply_markup=InlineKeyboardMarkup(Data.home_buttons)
     )
 
@@ -37,6 +34,5 @@ async def about(bot: Client, msg: Message):
         msg.chat.id,
         Data.ABOUT,
         disable_web_page_preview=True,
-        parse_mode=ParseMode.MARKDOWN, 
         reply_markup=InlineKeyboardMarkup(Data.home_buttons),
     )
