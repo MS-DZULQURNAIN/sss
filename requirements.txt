@@ -5,5 +5,4 @@ Telethon==1.*
 pyromod==1.5
 pyrogram1==0.*
 TgCrypto==1.*
-pyrogram==2.0.53
-python-telegram-bot==13.13
+pyrogram==2.*
