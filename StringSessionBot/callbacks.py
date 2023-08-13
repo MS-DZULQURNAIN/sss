@@ -21,6 +21,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
                 chat_id=chat_id,
                 message_id=message_id,
                 text=Data.START.format(callback_query.from_user.mention, mention),
+                parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(Data.buttons),
             )
     elif query == "about":
@@ -31,6 +32,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
             message_id=message_id,
             text=Data.ABOUT,
             disable_web_page_preview=True,
+            parse_mode=ParseMode.MARKDOWN, 
             reply_markup=InlineKeyboardMarkup(Data.home_buttons),
         )
     elif query == "help":
@@ -41,6 +43,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
             message_id=message_id,
             text=Data.HELP,
             disable_web_page_preview=True,
+            parse_mode=ParseMode.MARKDOWN, 
             reply_markup=InlineKeyboardMarkup(Data.home_buttons),
         )
     elif query == "generate":
@@ -49,19 +52,19 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
     elif query.startswith("pyrogram") or query.startswith("telethon"):
         try:
             if query == "pyrogram":
-                await callback_query.answer("Please note that the new type of string sessions may not work in all bots, i.e, only the bots that have been updated to pyrogram v2 will work!\n\n@TmMainChannel", show_alert=True)
+                await callback_query.answer("Pyrogram V1 Buat Bot Music", show_alert=True)
                 await generate_session(bot, callback_query.message)
             elif query == "pyrogram1":
                 await callback_query.answer()
                 await generate_session(bot, callback_query.message, old_pyro=True)
             elif query == "pyrogram_bot":
-                await callback_query.answer("Please note that this bot session will be of pyrogram v2\n\n@TmMainChannel", show_alert=True)
+                await callback_query.answer("Pyrogram V2 Buat userbot", show_alert=True)
                 await generate_session(bot, callback_query.message, is_bot=True)
             elif query == "telethon_bot":
                 await callback_query.answer()
                 await generate_session(bot, callback_query.message, telethon=True, is_bot=True)
             elif query == "telethon":
-                await callback_query.answer()
+                await callback_query.answer("Telethon Buat Userbot/Bot manage", show_alert=True)
                 await generate_session(bot, callback_query.message, telethon=True)
         except Exception as e:
             print(traceback.format_exc())
@@ -69,7 +72,5 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
             await callback_query.message.reply(ERROR_MESSAGE.format(str(e)))
 
 
-ERROR_MESSAGE = "Oops! An exception occurred! \n\n**Error** : {} " \
-            "\n\nPlease visit @TechnoMindzChat if this message doesn't contain any " \
-            "sensitive information and you if want to report this as " \
-            "this error message is not being logged by us!"
+ERROR_MESSAGE = "Oh Tidakkk \n\n**Error** : {} " \
+            "\n\n Hubungi @DezetSupport atau owner @MSDQQQ"
