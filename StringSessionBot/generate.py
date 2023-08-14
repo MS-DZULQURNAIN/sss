@@ -151,7 +151,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"**{ty.upper()} STRING SESSION** \n\n`{string_session}` \n\nDibuat oleh @StringDzRobot\nCh : @DezetStore\nGc : @DezetSupport\nOwner : @MSDQQQ"
+    text = f"**{ty.upper()} STRING SESSION** \n\n`{string_session}` \n\nDibuat oleh @DzStrGenBot\nCh : @DezetStore\nGc : @DezetSupport\nOwner : @MSDQQQ"
     try:
         if not is_bot:
             await client.send_message("me", text)
@@ -161,7 +161,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         pass
     await client.disconnect()
     await asyncio.sleep(1.0)
-    await bot.send_message(msg.chat.id, "**Berhasil membuat {} string session. \n\nCek di pesan tersimpan!** \n\nDibuat oleh @StringDzRobot\nCh : @DezetStore\nGc : @DezetSupport\nOwner : @MSDQQQ".format("telethon" if telethon else "pyrogram"))
+    await bot.send_message(msg.chat.id, "**Berhasil membuat {} string session. \n\nCek di pesan tersimpan!** \n\nDibuat oleh @DzStrGenBot\nCh : @DezetStore\nGc : @DezetSupport\nOwner : @MSDQQQ".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
