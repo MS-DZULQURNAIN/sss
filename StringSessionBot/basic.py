@@ -1,7 +1,7 @@
 from data import Data
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
-from StringSessionBot.database.mongo import cek, tambah, semua
+from StringSessionBot.database.mongo import cek, tambah, semua, user_data
 
 def filter(cmd: str):
     return filters.private & filters.incoming & filters.command(cmd)
@@ -18,7 +18,7 @@ async def start(bot: Client, msg: Message):
             pass
     user = await bot.get_me()
     mention = user.mention
-    pengguna = await semua() 
+    pengguna = user_data.count_document({})  #await semua({}) 
     await bot.send_message(
         msg.chat.id,
         Data.START.format(msg.from_user.mention, mention, pengguna),
