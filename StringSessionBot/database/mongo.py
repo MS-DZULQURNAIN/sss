@@ -1,5 +1,5 @@
 import pymongo, os
-from config import MONGO_URI, DB_NAME
+from env import MONGO_URI, DB_NAME
 
 
 dbclient = pymongo.MongoClient(MONGO_URI)
