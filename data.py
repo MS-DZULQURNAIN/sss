@@ -33,7 +33,7 @@ Kalo lu ga percaya bot ini hapus & blok aja gausah ribet yee, semua diluar tangg
 
 Buat id 5/6 Gausah ngambil string disini ntar akun lu deact/log out koar-koar anj🗿**
 
-Maintenance By @MSDQQ
+Maintenance By @MSDQQQ
     """
 
     HELP = """
