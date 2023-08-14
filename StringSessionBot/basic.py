@@ -1,7 +1,7 @@
 from data import Data
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
-from StringSessionBot.database.mongo import cek, tambah
+from StringSessionBot.database.mongo import cek, tambah, semua
 
 def filter(cmd: str):
     return filters.private & filters.incoming & filters.command(cmd)
@@ -17,9 +17,10 @@ async def start(bot: Client, msg: Message):
         except:
             pass
     mention = user.mention
+    pengguna = await semua() 
     await bot.send_message(
         msg.chat.id,
-        Data.START.format(msg.from_user.mention, mention),
+        Data.START.format(msg.from_user.mention, mention, ),
         reply_markup=InlineKeyboardMarkup(Data.buttons)
     )
 
