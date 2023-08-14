@@ -18,7 +18,7 @@ async def start(bot: Client, msg: Message):
             pass
     user = await bot.get_me()
     mention = user.mention
-    pengguna = user_data.count_document({})  #await semua({}) 
+    pengguna = user_data.count_documents({})  #await semua({}) 
     await bot.send_message(
         msg.chat.id,
         Data.START.format(msg.from_user.mention, mention, pengguna),
