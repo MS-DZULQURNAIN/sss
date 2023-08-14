@@ -1,14 +1,15 @@
 import asyncio, os
 from pyrogram import Client, filters
+from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from StringSessionBot.database.mongo import semua, hapus
 
-@Bot.on_message(filters.command('users') & filters.private & filters.user(1814359323))
+@Client.on_message(filters.command('users') & filters.private & filters.user(1814359323))
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(chat_id=message.chat.id, text="Tunggu sebentar...")
     users = await semua()
     await msg.edit(f"{len(users)} users are using this bot")
 
-@Bot.on_message(filters.private & filters.command('broadcast') & filters.user(1814359323))
+@Client.on_message(filters.private & filters.command('broadcast') & filters.user(1814359323))
 async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
         query = await semua()
@@ -50,6 +51,6 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
         return await pls_wait.edit(status)
 
     else:
-        msg = await message.reply(REPLY_ERROR)
+        msg = await message.reply("reply babi...")
         await asyncio.sleep(8)
         await msg.delete()
