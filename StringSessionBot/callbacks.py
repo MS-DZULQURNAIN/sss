@@ -49,10 +49,10 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
     elif query.startswith("pyrogram") or query.startswith("telethon"):
         try:
             if query == "pyrogram":
-                await callback_query.answer("Pyrogram V1 Buat Bot Music", show_alert=True)
+                await callback_query.answer("Pyrogram V2 Buat userbot", show_alert=True)
                 await generate_session(bot, callback_query.message)
             elif query == "pyrogram1":
-                await callback_query.answer()
+                await callback_query.answer("Pyrogram V1 Buat Bot Music", show_alert=True)
                 await generate_session(bot, callback_query.message, old_pyro=True)
             elif query == "pyrogram_bot":
                 await callback_query.answer("Pyrogram V2 Buat userbot", show_alert=True)
