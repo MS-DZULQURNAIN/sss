@@ -10,7 +10,12 @@ def filter(cmd: str):
 # Start Message
 @Client.on_message(filter("start"))
 async def start(bot: Client, msg: Message):
-    user = await bot.get_me()
+    id = await msg.from_user.id
+    if not await cek(id):
+        try:
+            await tambah(id)
+        except:
+            pass
     mention = user.mention
     await bot.send_message(
         msg.chat.id,
