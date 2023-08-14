@@ -8,7 +8,7 @@ API_HASH = os.getenv("API_HASH", "").strip()
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 DATABASE_URL = os.getenv("DATABASE_URL", "").strip()
 MONGO_URI = os.getenv("MONGO_URI", "").strip()
-DB_NAME = os.getenv(" DB_NAME", "").strinp()
+DB_NAME = os.getenv(" DB_NAME", "").strip()
 MUST_JOIN = os.getenv("MUST_JOIN", "")
 
 if not API_ID:
