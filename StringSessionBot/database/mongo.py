@@ -1,12 +1,17 @@
-from pymongo import MongoClient
-from config import MONGO_URL, MONGO_DB
+import pymongo, os
+from config import MONGO_URI, DB_NAME
 
-MongoClient 
+
+dbclient = pymongo.MongoClient(MONGO_URI)
+database = dbclient[DB_NAME]
+
+user_data = database['users']
+
 
 async def cek(user_id : int):
-    ada = user_data.find_one({'_id': user_id})
-    return bool(found)
+    ada = user_data.find_one({'id': user_id})
+    return bool(ada)
 
-async def add_user(user_id: int):
-    user_data.insert_one({'_id': user_id})
+async def add(user_id: int):
+    user_data.insert_one({'id': user_id})
     return
