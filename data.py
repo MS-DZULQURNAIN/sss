@@ -26,7 +26,7 @@ class Data:
         [InlineKeyboardButton("FakeDev", url="https://t.me/msdqqq")],
     ]
 
-    START = f"""
+    START = """
 **Halo {}
 
 Gw {} Gw bisa bantu lu buat string pyrogram v1, pyrogram v2 dan telethon
