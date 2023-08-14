@@ -3,7 +3,7 @@ from data import Data
 from pyrogram import Client
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
 from StringSessionBot.generate import generate_session, ask_ques, buttons_ques
-from StringSessionBot.database.mongo import semua
+from StringSessionBot.database.mongo import user_data
 
 
 # Callbacks
@@ -12,7 +12,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
     user = await bot.get_me()
     # user_id = callback_query.from_user.id
     mention = user.mention
-    pengguna = await semua()
+    pengguna = user_data.count_documents({}) #await semua()
     query = callback_query.data.lower()
     if query.startswith("home"):
         if query == 'home':
