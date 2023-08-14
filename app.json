@@ -54,8 +54,9 @@
     },
     "DB_NAME": {
       "description": "nama database",
-      "required": false,
+      "required": true,
       "value": ""
+    }, 
     "MUST_JOIN": {
       "description": "Add username/id of a channel/group",
       "required": false,
