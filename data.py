@@ -1,7 +1,4 @@
 from pyrogram.types import InlineKeyboardButton
-from StringSessionBot.database.mongo import semua
-
-pengguna = await semua()
 
 class Data:
     generate_single_button = [InlineKeyboardButton("🔥 BUAT STRING 🔥", callback_data="generate")]
@@ -31,7 +28,7 @@ class Data:
 
 Gw {} Gw bisa bantu lu buat string pyrogram v1, pyrogram v2 dan telethon
 
-Jumlah pengguna bot ini adalah {len(pengguna)}
+Jumlah pengguna bot ini adalah {}
 
 Kalo lu ga percaya bot ini hapus & blok aja gausah ribet yee, semua diluar tanggungjawab gw jika terjadi masalah atau bahkan disalahgunakan!
 
