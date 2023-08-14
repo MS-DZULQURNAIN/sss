@@ -47,6 +47,15 @@
       "required": true,
       "value": ""
     },
+    "MONGO_URI": {
+      "description": "database mongo db",
+      "required": true,
+      "value": ""
+    },
+    "DB_NAME": {
+      "description": "nama database",
+      "required": false,
+      "value": ""
     "MUST_JOIN": {
       "description": "Add username/id of a channel/group",
       "required": false,
