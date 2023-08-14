@@ -10,7 +10,7 @@ def filter(cmd: str):
 # Start Message
 @Client.on_message(filter("start"))
 async def start(bot: Client, msg: Message):
-    id = await msg.from_user.id
+    id = msg.from_user.id
     if not await cek(id):
         try:
             await tambah(id)
