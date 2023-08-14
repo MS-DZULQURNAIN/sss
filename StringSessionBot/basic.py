@@ -16,11 +16,12 @@ async def start(bot: Client, msg: Message):
             await tambah(id)
         except:
             pass
+    user = await bot.get_me()
     mention = user.mention
     pengguna = await semua() 
     await bot.send_message(
         msg.chat.id,
-        Data.START.format(msg.from_user.mention, mention, ),
+        Data.START.format(msg.from_user.mention, mention, pengguna),
         reply_markup=InlineKeyboardMarkup(Data.buttons)
     )
 
