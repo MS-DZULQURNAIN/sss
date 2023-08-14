@@ -1,7 +1,7 @@
 from data import Data
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
-from StringSessionBot.database.mongo import cek, tambah, semua, user_data
+from StringSessionBot.database.mongo import cek, tambah, user_data
 
 def filter(cmd: str):
     return filters.private & filters.incoming & filters.command(cmd)
