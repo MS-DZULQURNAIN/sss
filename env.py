@@ -7,6 +7,8 @@ API_ID = os.getenv("API_ID", "").strip()
 API_HASH = os.getenv("API_HASH", "").strip()
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 DATABASE_URL = os.getenv("DATABASE_URL", "").strip()
+MONGO_URI = os.getenv("MONGO_URI", "").strip()
+DB_NAME = os.getenv(" DB_NAME", "").strinp()
 MUST_JOIN = os.getenv("MUST_JOIN", "")
 
 if not API_ID:
@@ -21,6 +23,14 @@ if not BOT_TOKEN:
 if not DATABASE_URL:
     print("No DATABASE_URL found. Exiting...")
     raise SystemExit
+if not MONGO_URI:
+    print("No MONGO_URI found. Exiting...")
+    raise SystemExit
+if not DB_NAME:
+    print("No DB_NAME found. Exiting...")
+    raise SystemExit
+
+
 
 try:
     API_ID = int(API_ID)
