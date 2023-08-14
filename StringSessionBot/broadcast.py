@@ -1,5 +1,6 @@
 import asyncio, os
 from pyrogram import Client, filters
+from pyrogram.types import Message
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from StringSessionBot.database.mongo import semua, hapus
 
