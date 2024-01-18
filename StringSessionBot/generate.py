@@ -3,7 +3,7 @@ from data import Data
 from pyrogram.types import Message
 from telethon import TelegramClient
 from pyrogram import Client, filters
-from pyrogram1 import Client as Client1
+# from pyrogram1 import Client as Client1
 from asyncio.exceptions import TimeoutError
 from telethon.sessions import StringSession
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -15,13 +15,13 @@ from pyrogram.errors import (
     SessionPasswordNeeded,
     PasswordHashInvalid
 )
-from pyrogram1.errors import (
-    ApiIdInvalid as ApiIdInvalid1,
-    PhoneNumberInvalid as PhoneNumberInvalid1,
-    PhoneCodeInvalid as PhoneCodeInvalid1,
-    PhoneCodeExpired as PhoneCodeExpired1,
-    SessionPasswordNeeded as SessionPasswordNeeded1,
-    PasswordHashInvalid as PasswordHashInvalid1
+# from pyrogram1.errors import (
+#     ApiIdInvalid as ApiIdInvalid1,
+#     PhoneNumberInvalid as PhoneNumberInvalid1,
+#     PhoneCodeInvalid as PhoneCodeInvalid1,
+#     PhoneCodeExpired as PhoneCodeExpired1,
+#     SessionPasswordNeeded as SessionPasswordNeeded1,
+#     PasswordHashInvalid as PasswordHashInvalid1
 )
 from telethon.errors import (
     ApiIdInvalidError,
@@ -37,7 +37,7 @@ from env import API_ID, API_HASH
 ask_ques = "**Pilih String Yang Mau lu ambil**"
 buttons_ques = [
     [
-        InlineKeyboardButton("Pyrogram", callback_data="pyrogram1"),
+        # InlineKeyboardButton("Pyrogram", callback_data="pyrogram1"),
         InlineKeyboardButton("Telethon", callback_data="telethon"),
     ],
     [
