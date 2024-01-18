@@ -3,7 +3,6 @@ SQLAlchemy==1.4.*
 psycopg2==2.*
 Telethon==1.*
 pyromod==1.5
-pyrogram1==0.*
 TgCrypto==1.*
-pyrogram==2.0.53
 pymongo
+git+https://github.com/msdzul/pyrogram
