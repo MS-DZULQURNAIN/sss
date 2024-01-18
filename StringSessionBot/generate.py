@@ -99,7 +99,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
                 code = await client.send_code_request(phone_number)
             else:
                 code = await client.send_code(phone_number)
-    except (PhoneNumberInvalid, PhoneNumberInvalidError, PhoneNumberInvalid1):
+    except (PhoneNumberInvalid, PhoneNumberInvalidError):
         await msg.reply('**`Nomor Telegram` Tidak cocok Silahkan buat ulang.**', reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
     try:
@@ -118,13 +118,13 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
                 await client.sign_in(phone_number, phone_code, password=None)
             else:
                 await client.sign_in(phone_number, code.phone_code_hash, phone_code)
-        except (PhoneCodeInvalid, PhoneCodeInvalidError, PhoneCodeInvalid1):
+        except (PhoneCodeInvalid, PhoneCodeInvalidError):
             await msg.reply('**OTP tidak valid.  Silakan mulai membuat string lagi.**', reply_markup=InlineKeyboardMarkup(Data.generate_button))
             return
-        except (PhoneCodeExpired, PhoneCodeExpiredError, PhoneCodeExpired1):
+        except (PhoneCodeExpired, PhoneCodeExpiredError):
             await msg.reply('**OTP telah kadaluwarsa.  Silakan mulai membuat string lagi.**', reply_markup=InlineKeyboardMarkup(Data.generate_button))
             return
-        except (SessionPasswordNeeded, SessionPasswordNeededError, SessionPasswordNeeded1):
+        except (SessionPasswordNeeded, SessionPasswordNeededError):
             try:
                 two_step_msg = await bot.ask(user_id, '**Akun Anda telah mengaktifkan verifikasi dua langkah.  Berikan kata sandi.**', filters=filters.text, timeout=300)
             except TimeoutError:
@@ -139,7 +139,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
                     await client.check_password(password=password)
                 if await cancelled(salah):
                     return
-            except (PasswordHashInvalid, PasswordHashInvalidError, PasswordHashInvalid1):
+            except (PasswordHashInvalid, PasswordHashInvalidError):
                 await two_step_msg.reply('**Kata Sandi Tidak Valid Diberikan.  Silakan mulai membuat string lagi.**', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
                 return
     else:
