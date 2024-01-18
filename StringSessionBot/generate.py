@@ -21,8 +21,8 @@ from pyrogram.errors import (
 #     PhoneCodeInvalid as PhoneCodeInvalid1,
 #     PhoneCodeExpired as PhoneCodeExpired1,
 #     SessionPasswordNeeded as SessionPasswordNeeded1,
-#     PasswordHashInvalid as PasswordHashInvalid1
-)
+#     PasswordHashInvalid as PasswordHashInvalid1)
+
 from telethon.errors import (
     ApiIdInvalidError,
     PhoneNumberInvalidError,
